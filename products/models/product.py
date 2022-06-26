@@ -10,4 +10,5 @@ class Product(TimedModel):
 
     code = models.CharField(
         max_length=128,
+        unique=True,
     )
