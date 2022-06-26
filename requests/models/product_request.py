@@ -9,11 +9,13 @@ from users.models import User
 class ProductRequest(TimedModel):
     STATUS_DRAFT = 'draft'
     STATUS_PENDING = 'pending'
+    STATUS_FULFILLED = 'fulfilled'
     STATUS_REJECTED = 'rejected'
     STATUS_CANCELLED = 'cancelled'
     STATUS_CHOICES = (
         (STATUS_DRAFT, 'Draft'),
         (STATUS_PENDING, 'Pending'),
+        (STATUS_FULFILLED, 'fulfilled'),
         (STATUS_REJECTED, 'Rejected'),
         (STATUS_CANCELLED, 'cancelled'),
     )
