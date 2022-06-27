@@ -27,6 +27,10 @@ class ProductRequest(TimedModel):
         related_name='created_requests',
     )
 
+    type = models.CharField(
+        max_length=128,
+    )
+
     customer = models.ForeignKey(
         to=Customer,
         on_delete=models.CASCADE,

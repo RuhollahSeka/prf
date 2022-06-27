@@ -13,6 +13,7 @@ class ProductRequestEditSerializer(serializers.ModelSerializer):
         model = ProductRequest
         fields = (
             'id',
+            'type',
             'customer',
             'address',
             'needs_address_label',

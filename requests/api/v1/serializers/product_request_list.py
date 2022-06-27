@@ -20,6 +20,7 @@ class ProductRequestListSerializer(serializers.ModelSerializer):
             'created',
             'updated',
             'requester',
+            'type',
             'customer',
             'address',
             'needs_address_label',
