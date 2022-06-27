@@ -3,7 +3,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from requests.models import ProductRequest
 from users.permissions import IsRequester
-from ..serializers import ProductRequestEditSerializer
+from ..serializers import ProductRequestEditSerializer, ProductRequestListSerializer
 
 
 class PRRequesterViewset(ModelViewSet):
@@ -12,7 +12,7 @@ class PRRequesterViewset(ModelViewSet):
 
     def get_serializer_class(self):
         if self.action.lower() == 'list':
-            pass
+            return ProductRequestListSerializer
         return ProductRequestEditSerializer
 
     def get_queryset(self):
