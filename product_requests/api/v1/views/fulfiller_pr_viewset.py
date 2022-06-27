@@ -1,5 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -17,6 +18,7 @@ class FulfillerPRViewset(ModelViewSet):
     search_fields = ('customer__name', 'requester__first_name')
     ordering_fields = ('created', 'earliest_expected_date')
     ordering = ('-created',)
+    pagination_class = PageNumberPagination
 
     def get_serializer_class(self):
         if self.action.lower() == 'list':

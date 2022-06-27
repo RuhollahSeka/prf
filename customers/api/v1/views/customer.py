@@ -1,4 +1,5 @@
 from rest_framework.generics import ListAPIView
+from rest_framework.pagination import PageNumberPagination
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from customers.models import Customer
@@ -11,3 +12,4 @@ class CustomerListAPIView(ListAPIView):
     authentication_classes = (JWTAuthentication,)
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
+    pagination_class = PageNumberPagination
