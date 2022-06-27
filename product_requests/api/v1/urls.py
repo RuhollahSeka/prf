@@ -9,6 +9,12 @@ router.register(
     basename='requester-requests',
 )
 
+router.register(
+    prefix='jobs',
+    viewset=views.JobViewSet,
+    basename='jobs-edit',
+)
+
 
 urlpatterns = [
 

@@ -3,11 +3,13 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
 from product_requests.models import ProductRequest, ProductRequestItem
+from .job_readonly import JobReadOnlySerializer
 from .product_request_item import ProductRequestItemSerializer
 
 
 class ProductRequestEditSerializer(serializers.ModelSerializer):
     items = ProductRequestItemSerializer(many=True, read_only=True)
+    jobs = JobReadOnlySerializer(many=True, read_only=True)
 
     class Meta:
         model = ProductRequest
@@ -23,10 +25,12 @@ class ProductRequestEditSerializer(serializers.ModelSerializer):
             'shrink_wrap',
             'special_instructions',
             'items',
+            'jobs',
         )
         read_only_fields = (
             'id',
             'items',
+            'jobs',
         )
 
     def __init__(self, *args, **kwargs):
