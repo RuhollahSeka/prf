@@ -1,6 +1,6 @@
 import django_filters
 
-from requests.models import ProductRequest
+from product_requests.models import ProductRequest
 
 
 class ProductRequestFilter(django_filters.FilterSet):

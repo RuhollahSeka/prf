@@ -2,7 +2,7 @@ from django.db import models
 
 from common.models import TimedModel
 from products.models import Product
-from requests.models import ProductRequest
+from product_requests.models import ProductRequest
 
 
 class ProductRequestItem(TimedModel):

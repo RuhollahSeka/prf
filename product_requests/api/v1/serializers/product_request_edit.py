@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
-from requests.models import ProductRequest, ProductRequestItem
+from product_requests.models import ProductRequest, ProductRequestItem
 from .product_request_item import ProductRequestItemSerializer
 
 

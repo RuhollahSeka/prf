@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from products.api.v1.serializers import ProductSerializer
-from requests.models import ProductRequestItem
+from product_requests.models import ProductRequestItem
 
 
 class ProductRequestItemSerializer(serializers.ModelSerializer):

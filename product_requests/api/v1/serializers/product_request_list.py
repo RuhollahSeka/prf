@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from customers.api.v1.serializers import CustomerSerializer, CustomerAddressSerializer
 from products.api.v1.serializers import PalletTypeSerializer, ShrinkWrapSerializer
-from requests.models import ProductRequest
+from product_requests.models import ProductRequest
 from users.api.v1.serializers import UserSerializer
 
 

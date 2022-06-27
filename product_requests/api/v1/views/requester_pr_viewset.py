@@ -3,13 +3,13 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from requests.models import ProductRequest
+from product_requests.models import ProductRequest
 from users.permissions import IsRequester
 from ..filters import ProductRequestFilter
 from ..serializers import ProductRequestEditSerializer, ProductRequestListSerializer
 
 
-class PRRequesterViewset(ModelViewSet):
+class RequesterPRViewset(ModelViewSet):
     permission_classes = (IsRequester,)
     authentication_classes = (JWTAuthentication,)
     filter_backends = (SearchFilter, DjangoFilterBackend, OrderingFilter)

@@ -5,7 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(
     prefix='requesters',
-    viewset=views.PRRequesterViewset,
+    viewset=views.RequesterPRViewset,
     basename='requester-requests',
 )
 

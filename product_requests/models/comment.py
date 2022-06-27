@@ -1,7 +1,7 @@
 from django.db import models
 
 from common.models import TimedModel
-from requests.models import ProductRequest
+from product_requests.models import ProductRequest
 from users.models import User
 
 
