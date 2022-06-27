@@ -10,6 +10,12 @@ router.register(
 )
 
 router.register(
+    prefix='fulfillers',
+    viewset=views.FulfillerPRViewset,
+    basename='fulfiller-requests',
+)
+
+router.register(
     prefix='jobs',
     viewset=views.JobViewSet,
     basename='jobs-edit',

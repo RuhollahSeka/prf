@@ -1,3 +1,4 @@
 from .product_request_edit import ProductRequestEditSerializer
 from .product_request_list import ProductRequestListSerializer
+from .product_request_status_edit import ProductRequestStatusEditSerializer
 from .job_edit import JobEditSerializer
