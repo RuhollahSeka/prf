@@ -1,0 +1,64 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn prf.wsgi:application --bind 0.0.0.0:8000 --workers=2 -t 40 --access-logfile -  --access-logformat '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s" %(M)s'
+    volumes:
+      - api-static: /usr/src/app/static
+      - api-media: /usr/src/app/media
+    expose:
+      - 8000
+    links:
+      - redis: redis
+    env_file: .env
+
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A prf worker -l info -c 2
+    volumes:
+      - api-static: /usr/src/app/static
+      - api-media: /usr/src/app/media
+    expose:
+      - 8000
+    links:
+      - redis: redis
+    env_file: .env
+
+  beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A prf beat -l info
+    volumes:
+      - api-static: /usr/src/app/static
+      - api-media: /usr/src/app/media
+    expose:
+      - 8000
+    links:
+      - redis: redis
+    env_file: .env
+
+  postgres:
+    image: postgres
+    shm_size: 512mb
+    ports:
+      - 5432:5432
+    env_file:
+      - .env.postgres
+    volumes:
+      - postgres-volume: /var/lib/postgresql/data/
+      - ./postgres/: /docker-entrypoint-initdb.d/
+
+  redis:
+    restart: always
+    image: redis:latest
+    expose:
+      - 6379
+
+volumes:
+  api-static:
+  api-media:
+  postgres-volume:
