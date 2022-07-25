@@ -58,6 +58,18 @@ services:
     expose:
       - 6379
 
+  nginx:
+    build:
+      context: nginx
+      dockerfile: nginx/Dockerfile
+    volumes:
+      - api-static: /usr/src/app/static
+      - api-media: /usr/src/app/media
+    ports:
+      - 80:80
+    depends_on:
+      - api
+
 volumes:
   api-static:
   api-media:
