@@ -24,6 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'customers',
+    'product_requests',
+    'products',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +139,5 @@ CACHES = {
         },
     }
 }
+
+AUTH_USER_MODEL = 'users.User'
