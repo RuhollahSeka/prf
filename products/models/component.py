@@ -1,7 +1,9 @@
 from django.db import models
 
+from common.models import TimedModel
 
-class Component(models.Model):
+
+class Component(TimedModel):
     name = models.CharField(
         max_length=256,
     )
