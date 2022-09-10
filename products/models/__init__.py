@@ -1,5 +1,6 @@
 from .company import Company
 from .brand import Brand
+from .product import Product
 from .dimensions import Dimensions
 from .component import Component
 from .variant import Variant
