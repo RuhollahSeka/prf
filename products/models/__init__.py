@@ -1,5 +1,6 @@
 from .dimensions import Dimensions
 from .component import Component
+from .precautionary_phrase import PrecautionaryPhrase
 from .variant import Variant
 from .pallet_type import PalletType
 from .pallet import Pallet
