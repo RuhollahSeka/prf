@@ -1,7 +1,8 @@
 from django.db import models
 
 from common.models import TimedModel
-from products.models import PrecautionaryPhrase, Variant
+from products.models import Variant
+from safety_measures.models import PrecautionaryPhrase
 
 
 class HazardIdentification(TimedModel):
