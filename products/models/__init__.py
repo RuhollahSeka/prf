@@ -1,4 +1,5 @@
 from .dimensions import Dimensions
+from .component import Component
 from .variant import Variant
 from .warehouse import Warehouse
 from .pallet_type import PalletType
