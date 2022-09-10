@@ -6,6 +6,7 @@ from .component import Component
 from .variant import Variant
 from .precautionary_phrase import PrecautionaryPhrase
 from .international_regulation import InternationalRegulation
+from .safety_measures import SafetyMeasures
 from .pallet_type import PalletType
 from .pallet import Pallet
 from .warehouse import Warehouse
