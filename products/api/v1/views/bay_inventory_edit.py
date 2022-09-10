@@ -2,7 +2,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from products.models import Product, Bay, BayInventory
+from products.models import Variant, Bay, BayInventory
 from ..serializers import BayInventoryEditSerializer
 
 
@@ -22,10 +22,10 @@ class BayInventoryEditAPIView(UpdateAPIView):
         self._bay_code = request.data['bay_code']
 
     def get_object(self):
-        product = Product.objects.get(code=self._product_code)
+        variant = Variant.objects.get(code=self._product_code)
         bay = Bay.objects.get(code=self._bay_code)
         bay_inventory = BayInventory.objects.get_or_create(
-            product=product,
+            variant=variant,
             bay=bay,
         )
         return bay_inventory

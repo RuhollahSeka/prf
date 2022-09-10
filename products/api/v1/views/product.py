@@ -3,16 +3,16 @@ from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from products.models import Product
+from products.models import Variant
 from users.permissions import IsRequester
-from ..serializers import ProductSerializer
+from ..serializers import VariantSerializer
 
 
-class ProductListAPIView(ListAPIView):
+class VariantListAPIView(ListAPIView):
     permission_classes = (IsRequester,)
     authentication_classes = (JWTAuthentication,)
-    serializer_class = ProductSerializer
+    serializer_class = VariantSerializer
     filter_backends = (SearchFilter,)
     search_fields = ('code',)
-    queryset = Product.objects.all()
+    queryset = Variant.objects.all()
     pagination_class = PageNumberPagination

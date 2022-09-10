@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from products.models import Product
+from products.models import Variant
 
 
-class ProductSerializer(serializers.ModelSerializer):
+class VariantSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Product
+        model = Variant
         fields = (
             'id',
             'name',

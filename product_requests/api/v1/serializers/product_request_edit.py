@@ -53,7 +53,7 @@ class ProductRequestEditSerializer(serializers.ModelSerializer):
         for item_data in self._items_data:
             items_to_create.append(ProductRequestItem(
                 product_request=product_request,
-                product_id=item_data['product_id'],
+                variant_id=item_data['product_id'],
                 quantity=item_data['quantity'],
                 expiry_date=item_data['expiry_date'],
                 note=item_data['note'],
