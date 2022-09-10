@@ -1,3 +1,4 @@
+from .dimensions import Dimensions
 from .product import Product
 from .warehouse import Warehouse
 from .pallet_type import PalletType
