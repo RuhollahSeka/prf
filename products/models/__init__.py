@@ -1,3 +1,4 @@
+from .company import Company
 from .dimensions import Dimensions
 from .component import Component
 from .variant import Variant
