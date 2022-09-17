@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'product_requests',
     'products',
     'users',
+
+    'django_elasticsearch_dsl',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +143,9 @@ CACHES = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': f'{config("ES_HOST", "localhost")}:{config("ES_PORT", 9200)}'
+    },
+}
