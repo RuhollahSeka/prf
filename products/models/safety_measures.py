@@ -1,7 +1,7 @@
 from django.db import models
 
 from common.models import TimedModel
-from products.models import Variant, PrecautionaryPhrase, InternationalRegulation
+from products.models import Variant, GHSStatement, InternationalRegulation
 
 
 class SafetyMeasures(TimedModel):
@@ -16,7 +16,7 @@ class SafetyMeasures(TimedModel):
     )
 
     precautionary_phrases = models.ManyToManyField(
-        to=PrecautionaryPhrase,
+        to=GHSStatement,
         related_name='safety_measures',
     )
 

@@ -4,7 +4,7 @@ from .product import Product
 from .dimensions import Dimensions
 from .component import Component
 from .variant import Variant
-from .precautionary_phrase import PrecautionaryPhrase
+from .ghs_statement import GHSStatement
 from .international_regulation import InternationalRegulation
 from .safety_measures import SafetyMeasures
 from .pallet_type import PalletType
