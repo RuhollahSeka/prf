@@ -48,6 +48,7 @@ class Variant(TimedModel):
     ingredients = models.ManyToManyField(
         to=Ingredient,
         related_name='variants',
+        through='products.VariantIngredient',
     )
 
     image = models.ImageField(
@@ -60,3 +61,17 @@ class Variant(TimedModel):
     additional_information = models.TextField(
         blank=True,
     )
+
+
+class VariantIngredient(models.Model):
+    variant = models.ForeignKey(
+        to=Variant,
+        on_delete=models.CASCADE,
+    )
+
+    ingredient = models.ForeignKey(
+        to=Ingredient,
+        on_delete=models.CASCADE,
+    )
+
+    concentration = models.FloatField()
