@@ -71,7 +71,7 @@ services:
   nginx:
     build:
       context: nginx
-      dockerfile: ./nginx/Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - api-static:/usr/src/app/static
       - api-media:/usr/src/app/media
