@@ -8,6 +8,7 @@ class SafetyMeasures(TimedModel):
     variant = models.OneToOneField(
         to=Variant,
         on_delete=models.CASCADE,
+        related_name='safety_measures',
     )
 
     # Hazard Identification
@@ -70,7 +71,7 @@ class SafetyMeasures(TimedModel):
         blank=True,
     )
 
-    Dangerous_reactions = models.TextField(
+    dangerous_reactions = models.TextField(
         blank=True,
     )
 
