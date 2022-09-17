@@ -21,6 +21,7 @@ class Pallet(TimedModel):
     pallet_dimensions = models.OneToOneField(
         to=Dimensions,
         on_delete=models.DO_NOTHING,
+        related_name='pallet',
     )
 
     pallet_wrapping = models.CharField(
@@ -38,9 +39,10 @@ class Pallet(TimedModel):
     carton_dimensions = models.OneToOneField(
         to=Dimensions,
         on_delete=models.DO_NOTHING,
+        related_name='carton',
     )
 
-    formation_diagram = models.ImageField(
+    formation_diagram = models.FileField(
         upload_to='images/pallets/formations/',
         max_length=1024,
         null=True,

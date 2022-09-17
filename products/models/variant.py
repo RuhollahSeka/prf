@@ -51,7 +51,7 @@ class Variant(TimedModel):
         through='products.VariantIngredient',
     )
 
-    image = models.ImageField(
+    image = models.FileField(
         upload_to='images/variants/',
         max_length=1024,
         null=True,

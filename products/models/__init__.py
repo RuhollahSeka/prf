@@ -5,8 +5,8 @@ from .dimensions import Dimensions
 from .component import Component
 from .ghs_statement import GHSStatement
 from .ingredient import Ingredient
-from .chemical_properties import ChemicalProperties
 from .variant import Variant
+from .chemical_properties import ChemicalProperties
 from .international_regulation import InternationalRegulation
 from .safety_measures import SafetyMeasures
 from .pallet_type import PalletType

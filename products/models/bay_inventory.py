@@ -22,4 +22,4 @@ class BayInventory(TimedModel):
     )
 
     class Meta:
-        unique_together = ('product', 'bay')
+        unique_together = ('variant', 'bay')
