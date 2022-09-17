@@ -10,7 +10,7 @@ services:
     expose:
       - 8000
     links:
-      - redis: redis
+      - redis:redis
     env_file: .env
     restart: unless-stopped
     depends_on:
@@ -27,7 +27,7 @@ services:
     expose:
       - 8000
     links:
-      - redis: redis
+      - redis:redis
     env_file: .env
     restart: unless-stopped
     depends_on:
@@ -44,7 +44,7 @@ services:
     expose:
       - 8000
     links:
-      - redis: redis
+      - redis:redis
     env_file: .env
     restart: unless-stopped
     depends_on:
