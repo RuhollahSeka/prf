@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.6.8-alpine
+FROM python:3.9.14-alpine
 
 
 # set work directory
