@@ -9,8 +9,8 @@ from ..serializers import VariantSerializer
 
 
 class VariantListAPIView(ListAPIView):
-    permission_classes = (IsRequester,)
-    authentication_classes = (JWTAuthentication,)
+    # permission_classes = (IsRequester,)
+    # authentication_classes = (JWTAuthentication,)
     serializer_class = VariantSerializer
     filter_backends = (SearchFilter,)
     search_fields = ('code',)
